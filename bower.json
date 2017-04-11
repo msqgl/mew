@@ -1,0 +1,12 @@
+{
+  "name": "fullstack-fe4be",
+  "description": "fullstack-fe4be",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "slick-carousel": "^1.6.0",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {}
+}
