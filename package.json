@@ -1,0 +1,19 @@
+{
+  "name": "wedding-site",
+  "version": "0.0.1",
+  "description": "Wedding Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msqgl/wedding-site.git"
+  },
+  "author": "Michele Squeglia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msqgl/wedding-site/issues"
+  },
+  "homepage": "https://github.com/msqgl/wedding-site#readme"
+}
