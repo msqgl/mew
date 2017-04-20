@@ -1,9 +1,39 @@
 body {
     padding-top: 50px;
 }
+
 .starter-template {
     padding: 40px 15px;
     text-align: center;
+}
+
+.navbar {
+    opacity: 0.9;
+    background-color: #B1EDE8;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    background-color: #000068;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #000068;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle {
+    background-color: #000068;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: #000068;
+}
+
+.navbar-brand {
+    padding: 5px 5px;
+}
+
+.navbar-logo {
+    height: 100%;
 }
 
 .g-map {
