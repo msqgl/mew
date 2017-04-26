@@ -10,6 +10,8 @@ $(function () {
         case 'js_carousel':
             $.getScript(basePath + "owl-carousel2.min.js");
             break;
+        case 'countdown':
+            $.getScript(basePath + "countdown.min.js")
     }
 
 });

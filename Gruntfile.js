@@ -21,7 +21,8 @@ module.exports = function (grunt) {
                 files: {
                     'src/js/main.min.js': 'src/js/main.js',
                     'src/js/maps.min.js': 'src/js/maps.js',
-                    'src/js/owl-carousel2.min.js': 'src/js/owl-carousel2.js'
+                    'src/js/owl-carousel2.min.js': 'src/js/owl-carousel2.js',
+                    'src/js/countdown.min.js': 'src/js/countdown.js'
                 }
             }
         },
@@ -45,8 +46,12 @@ module.exports = function (grunt) {
                         dest: 'dist/font-awesome/fonts'
                     },
                     {expand: true, cwd: 'bower_components/gmaps/', src: ['gmaps.*'], dest: 'dist/gmaps'},
+                    {expand: true, cwd: 'bower_components/jquery.countdown/dist', src: ['**'], dest: 'dist/jquery.countdown'},
+
+
                     {expand: true, cwd: 'src/js', src: ['*.min.js'], dest: 'dist/custom/js'},
-                    {expand: true, cwd: 'src/css', src: ['*.min.css'], dest: 'dist/custom/css'}
+                    {expand: true, cwd: 'src/css', src: ['*.min.css'], dest: 'dist/custom/css'},
+                    {expand: true, cwd: 'src/img', src: ['**'], dest: 'dist/custom/img'}
                 ]
             }
         }
