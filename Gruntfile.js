@@ -27,6 +27,17 @@ module.exports = function (grunt) {
             }
         },
 
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,                  // Enable dynamic expansion
+                    cwd: 'src/img',                   // Src matches are relative to this path
+                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'src/img/compress'                  // Destination path prefix
+                }]
+            }
+        },
+
         copy: {
             main: {
                 files: [
@@ -51,7 +62,7 @@ module.exports = function (grunt) {
 
                     {expand: true, cwd: 'src/js', src: ['*.min.js'], dest: 'dist/custom/js'},
                     {expand: true, cwd: 'src/css', src: ['*.min.css'], dest: 'dist/custom/css'},
-                    {expand: true, cwd: 'src/img', src: ['**'], dest: 'dist/custom/img'}
+                    {expand: true, cwd: 'src/img/compress', src: ['**'], dest: 'dist/custom/img'}
                 ]
             }
         }
@@ -62,8 +73,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
 
-    grunt.registerTask('default', ['clean', 'less', 'uglify', 'copy']);
+    grunt.registerTask('default', ['clean', 'less', 'uglify', 'imagemin', 'copy']);
 };
