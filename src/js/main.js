@@ -1,7 +1,7 @@
 $(function () {
 
     var bodyId = $("body").prop("id");
-    var basePath = "dist/custom/js/";
+    var basePath = "custom/js/";
 
     switch (bodyId) {
         case 'js_maps':
