@@ -4,7 +4,12 @@ module.exports = function (grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
-        clean: ['dist', 'src/css', 'src/js/*.min.js*'],
+        clean: [
+            'dist/*/',
+            'src/css',
+            'src/js/*.min.js*',
+            'src/img/compress'
+        ],
 
         less: {
             build: {
@@ -30,10 +35,10 @@ module.exports = function (grunt) {
         imagemin: {
             dynamic: {
                 files: [{
-                    expand: true,                  // Enable dynamic expansion
-                    cwd: 'src/img',                   // Src matches are relative to this path
-                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-                    dest: 'src/img/compress'                  // Destination path prefix
+                    expand: true,
+                    cwd: 'src/img',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'src/img/compress'
                 }]
             }
         },
