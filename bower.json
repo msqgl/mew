@@ -1,14 +1,15 @@
 {
-  "name": "fullstack-fe4be",
-  "description": "fullstack-fe4be",
-  "version": "1.0.0",
+  "name": "wedding-site",
+  "description": "Wedding site",
+  "version": "0.0.1",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "owl.carousel": "owl-carousel2#^2.2.1",
     "gmaps": "^0.4.25",
-    "jquery.countdown": "^2.2.0"
+    "jquery.countdown": "^2.2.0",
+    "scrollreveal": "^3.3.5"
   },
   "devDependencies": {}
 }
