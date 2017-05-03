@@ -1,5 +1,5 @@
 $(function () {
 
     window.sr = ScrollReveal();
-    sr.reveal(".scroll-reveal");
+    sr.reveal(".js-scroll-reveal");
 });
