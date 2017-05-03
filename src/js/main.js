@@ -1,21 +1,21 @@
 $(function () {
 
-    var bodyId = $("body").prop("id");
+    var bodyClass = $("body").prop("class");
     var basePath = "custom/js/";
 
-    switch (bodyId) {
-        case 'js_maps':
-            $.getScript(basePath + "maps.min.js");
-            break;
-        case 'js_carousel':
-            $.getScript(basePath + "owl-carousel2.min.js");
-            break;
-        case 'countdown':
-            $.getScript(basePath + "countdown.min.js");
-            break;
-        case 'scroll':
-            $.getScript(basePath + "scroll.min.js");
-            break;
+    var classes = bodyClass.split(" ");
+
+    if (classes.includes("js_maps")) {
+        $.getScript(basePath + "maps.min.js");
+    }
+    if (classes.includes("js_carousel")) {
+        $.getScript(basePath + "owl-carousel2.min.js");
+    }
+    if (classes.includes("countdown-page")) {
+        $.getScript(basePath + "countdown.min.js");
+    }
+    if (classes.includes("scroll")) {
+        $.getScript(basePath + "scroll.min.js");
     }
 
 });
