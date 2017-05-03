@@ -9,7 +9,8 @@
     "owl.carousel": "owl-carousel2#^2.2.1",
     "gmaps": "^0.4.25",
     "jquery.countdown": "^2.2.0",
-    "scrollreveal": "^3.3.5"
+    "scrollreveal": "^3.3.5",
+    "bLazy": "blazy#^1.8.2"
   },
   "devDependencies": {}
 }

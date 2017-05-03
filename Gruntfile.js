@@ -65,6 +65,7 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'bower_components/gmaps/', src: ['gmaps.*'], dest: 'dist/gmaps'},
                     {expand: true, cwd: 'bower_components/jquery.countdown/dist', src: ['**'], dest: 'dist/jquery.countdown'},
                     {expand: true, cwd: 'bower_components/scrollreveal/dist', src: ['**'], dest: 'dist/scrollreveal'},
+                    {expand: true, cwd: 'bower_components/bLazy/', src: ['blazy.*.js'], dest: 'dist/bLazy'},
 
 
                     {expand: true, cwd: 'src/js', src: ['*.min.js'], dest: 'dist/custom/js'},
