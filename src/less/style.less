@@ -2,8 +2,13 @@
 @color-navy: #000068;
 @color-background-countdown: white;
 
-body {
-  //padding-top: 50px;
+html {
+  overflow-y: auto;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .starter-template {
@@ -123,6 +128,13 @@ nav[canvas] {
   font-size: 24px;
   font-weight: 100;
   text-align: center;
+}
+
+[canvas=container] {
+  width: 100%;
+  position: relative;
+  background-color: white;
+  -webkit-overflow-scrolling: touch;
 }
 
 [off-canvas] {
