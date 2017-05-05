@@ -1,7 +1,7 @@
 $(function () {
 
     var bLazy = new Blazy({
-        elector: '.b-lazy',
+        selector: '.b-lazy',
         offset: 180
     });
 
