@@ -15,6 +15,7 @@
     <![endif]-->
 
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="slidebars/slidebars.min.css">
 
     <link rel="stylesheet" href="owl.carousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="owl.carousel/assets/owl.theme.default.min.css">
@@ -22,40 +23,25 @@
     <link href="custom/css/style.min.css" rel="stylesheet">
 </head>
 
-<body class="js-lazy scroll">
+<body class="js-lazy scroll slidebars">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <img class="navbar-logo" src="custom/img/logo.png">
-            </a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Home</a></li>
-                <li><a href="maps.html"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Maps</a></li>
-                <li><a href="contacts.html"><i class="fa fa-address-book fa-fw" aria-hidden="true"></i> Contatti</a>
-                </li>
-                <li class="active"><a href="#"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i> Carosello</a>
-                <li><a href="countdown.html"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i> Countdown</a></li>
-                <li><a href="scroll.html"><i class="fa fa-magic fa-fw" aria-hidden="true"></i> Scroll</a></li>
-                </li>
-                <li class="active"><a href="#"><i class="fa fa-bolt fa-fw" aria-hidden="true"></i> bLazy</a></li>
-                <li><a href="slidebars.html"><i class="fa fa-bars fa-fw" aria-hidden="true"></i> Slidebar</a></li>
-            </ul>
-        </div>
+<div off-canvas="main-menu right push">
+    <div>
+        <img id="logo-menu" src="custom/img/logo.png" class="img-responsive center-block">
     </div>
-</nav>
+    <ul class="menu nav">
+        <li><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Home</a></li>
+        <li><a href="maps.html"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Maps</a></li>
+        <li><a href="contacts.html"><i class="fa fa-address-book fa-fw" aria-hidden="true"></i> Contatti</a></li>
+        <li><a href="carousel.html"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i> Carosello</a></li>
+        <li><a href="countdown.html"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i> Countdown</a></li>
+        <li><a href="scroll.html"><i class="fa fa-magic fa-fw" aria-hidden="true"></i> Scroll</a></li>
+        <li><a href="lazy.html"><i class="fa fa-bolt fa-fw" aria-hidden="true"></i> bLazy</a></li>
+        <li><a href="slidebars.html"><i class="fa fa-bars fa-fw" aria-hidden="true"></i> Slidebar</a></li>
+    </ul>
+</div>
 
-<div>
+<div canvas="container">
 
     <div class="row js-scroll-reveal">
         <img class="b-lazy img-responsive"
@@ -101,19 +87,23 @@
 
 </div>
 
+<nav canvas>
+    <div class="container">
+        <div id="navbar" class="pull-right">
+            <button type="button" class="btn btn-default js-toggle-main-menu menu-button">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-
+<script src="slidebars/slidebars.min.js"></script>
 
 <script src="custom/js/main.min.js"></script>
 <script src="bLazy/blazy.min.js"></script>
 <script src="scrollreveal/scrollreveal.min.js"></script>
 
-<script type="text/javascript">
-    var bLazy = new Blazy({
-        elector: '.b-lazy',
-        offset: 180
-    });
-</script>
 </body>
 </html>
