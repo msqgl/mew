@@ -20,5 +20,8 @@ $(function () {
     if (classes.includes("slidebars")) {
         $.getScript(basePath + "slidebars.min.js");
     }
+    if (classes.includes("js-lazy")) {
+        $.getScript(basePath + "blazy.min.js");
+    }
 
 });

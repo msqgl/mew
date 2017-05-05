@@ -29,7 +29,8 @@ module.exports = function (grunt) {
                     'src/js/owl-carousel2.min.js': 'src/js/owl-carousel2.js',
                     'src/js/countdown.min.js': 'src/js/countdown.js',
                     'src/js/scroll.min.js': 'src/js/scroll.js',
-                    'src/js/slidebars.min.js': 'src/js/slidebars.js'
+                    'src/js/slidebars.min.js': 'src/js/slidebars.js',
+                    'src/js/blazy.min.js': 'src/js/blazy.js'
                 }
             }
         },
