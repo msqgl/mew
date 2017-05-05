@@ -112,3 +112,44 @@ body {
 .js-scroll-reveal {
   visibility: hidden;
 }
+
+nav[canvas] {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  font-weight: 100;
+  text-align: center;
+
+  .container {
+    max-width: 900px;
+  }
+}
+
+[off-canvas] {
+
+  background: url('../img/symphony.png') repeat;
+
+  ul.menu li a {
+    color: #333;
+    font-size: 20px;
+    display: block;
+    padding: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transition: all 200ms ease-in-out 0s;
+    transition: all 200ms ease-in-out 0s;
+  }
+}
+
+.menu-button {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+img#logo-menu {
+  margin-top: 20px;
+  max-width: 120px;
+}

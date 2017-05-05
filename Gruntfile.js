@@ -28,7 +28,8 @@ module.exports = function (grunt) {
                     'src/js/maps.min.js': 'src/js/maps.js',
                     'src/js/owl-carousel2.min.js': 'src/js/owl-carousel2.js',
                     'src/js/countdown.min.js': 'src/js/countdown.js',
-                    'src/js/scroll.min.js': 'src/js/scroll.js'
+                    'src/js/scroll.min.js': 'src/js/scroll.js',
+                    'src/js/slidebars.min.js': 'src/js/slidebars.js'
                 }
             }
         },
@@ -66,6 +67,7 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'bower_components/jquery.countdown/dist', src: ['**'], dest: 'dist/jquery.countdown'},
                     {expand: true, cwd: 'bower_components/scrollreveal/dist', src: ['**'], dest: 'dist/scrollreveal'},
                     {expand: true, cwd: 'bower_components/bLazy/', src: ['blazy.*.js'], dest: 'dist/bLazy'},
+                    {expand: true, cwd: 'bower_components/slidebars/dist/', src: ['**'], dest: 'dist/slidebars'},
 
 
                     {expand: true, cwd: 'src/js', src: ['*.min.js'], dest: 'dist/custom/js'},
@@ -86,4 +88,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
 
     grunt.registerTask('default', ['clean', 'less', 'uglify', 'imagemin', 'copy']);
+    // grunt.registerTask('default', ['clean', 'less', 'uglify', 'copy']);
 };

@@ -17,5 +17,8 @@ $(function () {
     if (classes.includes("scroll")) {
         $.getScript(basePath + "scroll.min.js");
     }
+    if (classes.includes("slidebars")) {
+        $.getScript(basePath + "slidebars.min.js");
+    }
 
 });

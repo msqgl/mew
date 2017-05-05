@@ -10,7 +10,8 @@
     "gmaps": "^0.4.25",
     "jquery.countdown": "^2.2.0",
     "scrollreveal": "^3.3.5",
-    "bLazy": "blazy#^1.8.2"
+    "bLazy": "blazy#^1.8.2",
+    "slidebars": "^2.0.2"
   },
   "devDependencies": {}
 }
