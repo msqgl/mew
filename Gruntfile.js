@@ -37,16 +37,18 @@ module.exports = function (grunt) {
             }
         },
 
+/*
         imagemin: {
             dynamic: {
                 files: [{
                     expand: true,
                     cwd: 'src/img',
-                    src: ['**/*.{png,jpg,gif}'],
+                    src: ['**!/!*.{png,jpg,gif}'],
                     dest: 'src/img/compress'
                 }]
             }
         },
+*/
 
         copy: {
             main: {
@@ -75,7 +77,7 @@ module.exports = function (grunt) {
 
                     {expand: true, cwd: 'src/js', src: ['*.min.js'], dest: 'dist/custom/js'},
                     {expand: true, cwd: 'src/css', src: ['*.min.css'], dest: 'dist/custom/css'},
-                    {expand: true, cwd: 'src/img/compress', src: ['**'], dest: 'dist/custom/img'}
+                    {expand: true, cwd: 'src/img', src: ['**'], dest: 'dist/custom/img'}
                 ]
             }
         }
@@ -90,6 +92,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
 
-    grunt.registerTask('default', ['clean', 'less', 'uglify', 'imagemin', 'copy']);
-    // grunt.registerTask('default', ['clean', 'less', 'uglify', 'copy']);
+    // grunt.registerTask('default', ['clean', 'less', 'uglify', 'imagemin', 'copy']);
+    grunt.registerTask('default', ['clean', 'less', 'uglify', 'copy']);
 };
