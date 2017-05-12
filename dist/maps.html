@@ -5,7 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Maps</title>
+    <title>Locations</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="custom/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="custom/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="custom/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="custom/img/icons/manifest.json">
+    <link rel="mask-icon" href="custom/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="custom/img/icons/favicon.ico">
+    <meta name="msapplication-config" content="custom/img/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,90 +24,91 @@
     <![endif]-->
 
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="custom/css/slidebars.min.css">
 
     <link href="custom/css/style.min.css" rel="stylesheet">
 </head>
 
-<body class="js_maps">
+<body class="slidebars js_maps">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img class="navbar-logo" src="custom/img/logo.png"></a>
+<div off-canvas="main-menu right push">
+    <div>
+        <img id="logo-menu" src="custom/img/logo/basic2.png" class="img-responsive center-block">
+    </div>
+    <ul class="menu nav">
+        <li><a href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Home</a></li>
+        <li><a href="contacts.html"><i class="fa fa-address-book fa-fw" aria-hidden="true"></i> Contatti</a></li>
+        <li><a href="maps.html"><i class="fa fa-map fa-fw" aria-hidden="true"></i> Locations</a></li>
+        <li><a href="#"><i class="fa fa-share-alt fa-fw" aria-hidden="true"></i> Social</a></li>
+        <li><a href="#"><i class="fa fa-plane fa-fw" aria-hidden="true"></i> Il viaggio</a></li>
+    </ul>
+</div>
+
+<div canvas="container">
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Maps!</h1>
+            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
+                content or information.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
         </div>
-        <div id="navbar" class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Home</a></li>
-                <li class="active"><a href="#"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Maps</a></li>
-                <li><a href="contacts.html"><i class="fa fa-address-book fa-fw" aria-hidden="true"></i> Contatti</a></li>
-                <li><a href="carousel.html"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i> Carosello</a></li>
-                <li><a href="countdown.html"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i> Countdown</a></li>
-                <li><a href="scroll.html"><i class="fa fa-magic fa-fw" aria-hidden="true"></i> Scroll</a></li>
-                <li><a href="lazy.html"><i class="fa fa-bolt fa-fw" aria-hidden="true"></i> bLazy</a></li>
-                <li><a href="slidebars.html"><i class="fa fa-bars fa-fw" aria-hidden="true"></i> Slidebar</a></li>
-            </ul>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-6">
+                <div id="map" class="g-map"></div>
+            </div>
+            <div class="col-md-6">
+                <address>
+                    <strong>Basilica di San Nicolò</strong><br>
+                    Via S. Nicolò, 1<br>
+                    Lecco, LC 23900<br>
+                    <div class="visible-xs visible-sm">
+                        <a id="address-link-1" class="btn btn-default btn-sm" target="_blank">
+                            <i class="fa fa-location-arrow fa-2x pull-left"></i> Naviga
+                        </a>
+                    </div>
+                </address>
+                <hr>
+                <address>
+                    <strong>Hotel Villa Giulia Ristorante Al Terrazzo</strong><br>
+                    Frazione Parè, 69/73<br>
+                    Valmadrera, LC 23868<br>
+                    (+39) 0341 583106
+                    <div class="visible-xs visible-sm">
+                        <a id="address-link-2" class="btn btn-default btn-sm" target="_blank">
+                            <i class="fa fa-location-arrow fa-2x pull-left"></i> Naviga
+                        </a>
+                    </div>
+                </address>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>© 2017 Company, Inc.</p>
+        </footer>
+    </div>
+
+</div>
+
+<nav canvas>
+    <div class="container">
+        <div id="navbar" class="pull-right">
+            <button type="button" class="btn btn-default js-toggle-main-menu menu-button">
+                <i class="fa fa-bars"></i>
+            </button>
         </div>
     </div>
 </nav>
 
-<div class="jumbotron">
-    <div class="container">
-        <h1>Maps!</h1>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
-            content or information.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-    </div>
-</div>
-
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-6">
-            <div id="map" class="g-map"></div>
-        </div>
-        <div class="col-md-6">
-            <address>
-                <strong>Basilica di San Nicolò</strong><br>
-                Via S. Nicolò, 1<br>
-                Lecco, LC 23900<br>
-                <div class="visible-xs visible-sm">
-                    <a id="address-link-1" class="btn btn-default btn-sm" target="_blank">
-                        <i class="fa fa-location-arrow fa-2x pull-left"></i> Naviga
-                    </a>
-                </div>
-            </address>
-            <hr>
-            <address>
-                <strong>Hotel Villa Giulia Ristorante Al Terrazzo</strong><br>
-                Frazione Parè, 69/73<br>
-                Valmadrera, LC 23868<br>
-                (+39) 0341 583106
-                <div class="visible-xs visible-sm">
-                    <a id="address-link-2" class="btn btn-default btn-sm" target="_blank">
-                        <i class="fa fa-location-arrow fa-2x pull-left"></i> Naviga
-                    </a>
-                </div>
-            </address>
-        </div>
-    </div>
-
-    <hr>
-
-    <footer>
-        <p>© 2017 Company, Inc.</p>
-    </footer>
-</div>
-
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-
+<script src="slidebars/slidebars.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHn1bahodQpL1aY6vpRhuHKTq8J0r6Sc8"></script>
 <script src="gmaps/gmaps.min.js"></script>
 
