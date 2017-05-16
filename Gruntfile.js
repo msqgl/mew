@@ -32,7 +32,8 @@ module.exports = function (grunt) {
                     'src/js/countdown.min.js': 'src/js/countdown.js',
                     'src/js/scroll.min.js': 'src/js/scroll.js',
                     'src/js/slidebars.min.js': 'src/js/slidebars.js',
-                    'src/js/blazy.min.js': 'src/js/blazy.js'
+                    'src/js/blazy.min.js': 'src/js/blazy.js',
+                    'src/js/mustache.min.js': 'src/js/mustache.js'
                 }
             }
         },
@@ -73,6 +74,7 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'bower_components/scrollreveal/dist', src: ['**'], dest: 'dist/scrollreveal'},
                     {expand: true, cwd: 'bower_components/bLazy/', src: ['blazy.*.js'], dest: 'dist/bLazy'},
                     {expand: true, cwd: 'bower_components/slidebars/dist/', src: ['**'], dest: 'dist/slidebars'},
+                    {expand: true, cwd: 'bower_components/mustache.js/', src: ['mustache*.js'], dest: 'dist/mustache.js'},
 
 
                     {expand: true, cwd: 'src/js', src: ['*.min.js'], dest: 'dist/custom/js'},
