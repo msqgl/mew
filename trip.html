@@ -95,7 +95,7 @@
 
 <script src="custom/js/main.min.js"></script>
 
-<script id="template" type="x-tmpl-mustache">
+<!--<script id="template" type="x-tmpl-mustache">
 {{#items}}
 <div class="row">
     <div class="col-md-4 text-center">
@@ -140,6 +140,23 @@
 
 <hr>
 {{/items}}
+</script>-->
+<script id="template" type="x-tmpl-mustache">
+<div class="row">
+    {{#items}}
+    <div class="col-md-4 card-container">
+        <div class="card">
+            <div class="card-img-top" style="background: url({{image}}); background-size: cover;">
+            </div>
+            <div class="card-block">
+                <h3>{{title}}</h3>
+                <p>{{description}}</p>
+            </div>
+        </div>
+        <hr class="cards-divider">
+    </div>
+    {{/items}}
+</div>
 </script>
 
 </body>
