@@ -1,6 +1,7 @@
 @color-pale-turquoise: #B1EDE8;
 @color-navy: #000068;
 @color-background-countdown: white;
+@small-screen: 768px;
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -180,5 +181,38 @@ img#logo-menu {
       max-height: 200px;
     }
 
+  }
+}
+
+.card-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .card {
+    background-color: #fff;
+    padding: 0 0 0 0;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    @media (min-width: @small-screen) {
+      border: 1px solid rgba(0, 0, 0, .125);
+      border-radius: .25rem;
+      height: 500px;
+
+      .cards-divider {
+        display: none;
+      }
+    }
+
+    .card-img-top {
+      height: 200px;
+      width: 100%;
+      border-top-right-radius: .25rem;
+      border-top-left-radius: .25rem;
+    }
+
+    .card-block {
+      padding: 10px;
+    }
   }
 }
