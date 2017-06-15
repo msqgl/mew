@@ -34,7 +34,7 @@
     <link href="custom/css/style.min.css" rel="stylesheet">
 </head>
 
-<body class="slidebars js-mustache">
+<body class="slidebars js-mustache wedding-list">
 
 <div off-canvas="main-menu right push">
     <div>
@@ -51,11 +51,12 @@
 
 <div canvas="container">
 
-    <div class="jumbotron">
+    <div class="jumbotron bg-japan-lantern">
 
         <div class="container text-center">
-            <h1>H1</h1>
-            <h2>H2</h2>
+            <h1>Il viaggio</h1>
+            <h2>La nostra luna di miele sarà suddivisa in 2 parti: Giappone e Seychelles!</h2>
+            <h2>Contribuisci anche tu al nostro viaggio...</h2>
         </div>
 
     </div>
@@ -87,6 +88,47 @@
     </div>
 </nav>
 
+<div class="modal fade" id="gift-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="step-1">
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="contribute" class="control-label">Inserisci l'importo che vuoi regalare</label>
+                            <input type="text" class="form-control" id="contribute">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Nome di chi partecipa al regalo</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Un messaggio per gli  sposi:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-primary" id="gift-modal-button">Invia messaggio</button>
+                </div>
+            </div>
+            <div class="step-2">
+                <div class="modal-body">
+                    <h3 class="text-center">Grazie <3 !</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery.countdown/jquery.countdown.min.js"></script>
@@ -95,62 +137,26 @@
 
 <script src="custom/js/main.min.js"></script>
 
-<!--<script id="template" type="x-tmpl-mustache">
-{{#items}}
-<div class="row">
-    <div class="col-md-4 text-center">
-        <img src="{{image}}" class="img-responsive img-rounded">
-    </div>
-
-    <div class="col-md-4">
-        <h3>{{title}}</h3>
-        <p>{{description}}</p>
-    </div>
-
-    <div class="col-md-4">
-
-        <div class="container-fluid text-center">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    {{totalPrice}} €
-                </div>
-            </div>
-            <div class="row margin-top-10">
-                <div class="col-sm-12">
-                    Regalato: {{consumedPrice}} €
-                </div>
-            </div>
-            <div class="row margin-top-10">
-                <div class="col-sm-12">
-                    <input type="text" placeholder="Contributo libero..."/>
-                </div>
-            </div>
-            <div class="row margin-top-10">
-                <div class="col-sm-12">
-                    <button type="button" class="btn btn-success">Regala</button>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<hr>
-{{/items}}
-</script>-->
 <script id="template" type="x-tmpl-mustache">
 <div class="row">
     {{#items}}
-    <div class="col-md-4 card-container">
+    <div class="col-sm-4 card-container">
         <div class="card">
-            <div class="card-img-top" style="background: url({{image}}); background-size: cover;">
+            <div class="card-img-top" style="background: url({{image}}) no-repeat center center; background-size: cover;">
             </div>
             <div class="card-block">
                 <h3>{{title}}</h3>
                 <p>{{description}}</p>
+            </div>
+            <div class="card-price container-fluid">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h4>{{totalPrice}} €</h4>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#gift-modal" data-title="{{title}}">Regala</button>
+                    </div>
+                </div>
             </div>
         </div>
         <hr class="cards-divider">
