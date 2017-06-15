@@ -149,7 +149,12 @@ img#logo-menu {
   }
 
   .bg-japan {
-    background: url('../img/japan/japan-1.jpg') no-repeat center center;
+    background: url('../img/japan/japan-1.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .bg-japan-lantern {
+    background: url('../img/japan/japan-lantern.jpg') no-repeat 50% 50%;
     background-size: cover;
   }
 
@@ -193,15 +198,13 @@ img#logo-menu {
     padding: 0 0 0 0;
     margin-left: 20px;
     margin-right: 20px;
+    position: relative;
+    height: 500px;
 
     @media (min-width: @small-screen) {
       border: 1px solid rgba(0, 0, 0, .125);
       border-radius: .25rem;
       height: 500px;
-
-      .cards-divider {
-        display: none;
-      }
     }
 
     .card-img-top {
@@ -214,5 +217,25 @@ img#logo-menu {
     .card-block {
       padding: 10px;
     }
+
+    .card-price {
+      position: absolute;
+      bottom: 0;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+
+  .cards-divider {
+    @media (min-width: @small-screen) {
+      display: none;
+    }
+  }
+}
+
+#gift-modal {
+
+  .step-2 {
+    display: none;
   }
 }

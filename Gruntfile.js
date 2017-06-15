@@ -34,6 +34,7 @@ module.exports = function (grunt) {
                     'src/js/slidebars.min.js': 'src/js/slidebars.js',
                     'src/js/blazy.min.js': 'src/js/blazy.js',
                     'src/js/mustache.min.js': 'src/js/mustache.js',
+                    'src/js/wedding-list.min.js': 'src/js/wedding-list.js',
                     // 'src/js/g-sheets.min.js': 'src/js/g-sheets.js'
                 }
             }
