@@ -7,11 +7,39 @@ $(function () {
         modal.find('.modal-title').text(title);
     });
 
+    function validate() {
+        var hasValidationError = false;
+
+        var $contribute = $("#contribute");
+        var $recipient = $("#recipient-name");
+        var contribute = $contribute.val();
+        var recipientName = $recipient.val();
+
+        if (!contribute) {
+            hasValidationError = true;
+            $contribute.parent().addClass("has-error");
+        }
+
+        if (contribute) {
+        //    TODO (msqgl) - check quantità cash!
+        }
+
+        if (!recipientName) {
+            hasValidationError = true;
+            $recipient.parent().addClass("has-error");
+        }
+
+        return hasValidationError;
+    }
+
 
     $("#gift-modal-button").on("click tap", function () {
-        $(".step-1").fadeOut(function () {
-            $(".step-2").fadeIn();
-        });
+
+        if (!validate()) {
+            $(".step-1").fadeOut(function () {
+                $(".step-2").fadeIn();
+            });
+        }
     });
 
     function changeBackground() {
