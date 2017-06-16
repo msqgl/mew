@@ -1,30 +1,57 @@
 $(function () {
 
-    $('#gift-modal').on('show.bs.modal', function (event) {
+    var $contribute = $("#contribute");
+    var $recipient = $("#recipient-name");
+    var $step1 = $(".step-1");
+    var $step2 = $(".step-2");
+    var $gift = $('#gift-modal');
+
+    $gift.on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
         var title = button.data('title');
         var modal = $(this);
         modal.find('.modal-title').text(title);
+
+        var consumedPrice = button.data("consumed-price");
+        var totalPrice = button.data("total-price");
+        var delta = totalPrice - consumedPrice;
+        $contribute.attr("max", delta);
+        $contribute.attr("min", 0);
+
+        $step1.fadeIn();
+        $step2.fadeOut();
+
+        $contribute.removeClass("has-error");
+        $contribute.val("");
+        $recipient.removeClass("has-error");
+        $recipient.val("");
     });
 
-    function validate() {
+    $gift.on("hide.bs.modal", function () {
+        if ($step2.is(":visible")) {
+            window.location.reload();
+        }
+    });
+
+    function validate(totalPrice, consumedPrice) {
         var hasValidationError = false;
 
-        var $contribute = $("#contribute");
-        var $recipient = $("#recipient-name");
-        var contribute = $contribute.val();
-        var recipientName = $recipient.val();
+        var contributeVal = $contribute.val();
+        var recipientNameVal = $recipient.val();
 
-        if (!contribute) {
+        if (!contributeVal) {
             hasValidationError = true;
             $contribute.parent().addClass("has-error");
         }
 
-        if (contribute) {
-        //    TODO (msqgl) - check quantità cash!
+        if (contributeVal) {
+            var delta = totalPrice - consumedPrice;
+            if (contributeVal > delta) {
+                $contribute.parent().addClass("has-error");
+            }
         }
 
-        if (!recipientName) {
+        if (!recipientNameVal) {
             hasValidationError = true;
             $recipient.parent().addClass("has-error");
         }
@@ -34,10 +61,12 @@ $(function () {
 
 
     $("#gift-modal-button").on("click tap", function () {
+        var totalPrice = $(this).data("total-price");
+        var consumedPrice = $(this).data("consumed-price");
 
-        if (!validate()) {
-            $(".step-1").fadeOut(function () {
-                $(".step-2").fadeIn();
+        if (!validate(totalPrice, consumedPrice)) {
+            $step1.fadeOut(function () {
+                $step2.fadeIn();
             });
         }
     });
@@ -58,5 +87,9 @@ $(function () {
 
     setInterval(function () {
         changeBackground()
-    }, 5000)
+    }, 5000);
+
+    $("[type='number']").keypress(function (evt) {
+        evt.preventDefault();
+    });
 });
