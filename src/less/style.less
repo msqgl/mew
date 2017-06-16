@@ -78,12 +78,26 @@ body {
   overflow: hidden;
 }
 
+.margin-top-50 {
+  margin-top: 50px;
+}
+
 .margin-top-30 {
   margin-top: 30px;
 }
 
+.margin-top-sm-30 {
+  @media (max-width: @small-screen) {
+    margin-top: 30px;
+  }
+}
+
 .margin-top-10 {
   margin-top: 10px;
+}
+
+.margin-left-right-30 {
+  margin: 0 30px 0 30px;
 }
 
 .scroll-reveal {
@@ -98,6 +112,14 @@ body {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.v-center-md {
+  @media (min-width: @small-screen) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 nav[canvas] {
@@ -243,4 +265,52 @@ img#logo-menu {
   .step-2 {
     display: none;
   }
+}
+
+.row-eq-height {
+  @media (min-width: @small-screen) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.no-md-margin {
+  @media (min-width: @small-screen) {
+    margin: 0;
+  }
+}
+
+.thumbnail-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.display-none-md {
+  @media (min-width: @small-screen) {
+    display: none;
+  }
+}
+
+footer {
+  padding: 5px 30px 5px 30px;
+  margin-top: 30px;
+  color: #a0a0a0;
 }
