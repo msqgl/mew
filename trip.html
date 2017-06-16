@@ -44,7 +44,7 @@
         <li><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Home</a></li>
         <li><a href="contacts.html"><i class="fa fa-address-book fa-fw" aria-hidden="true"></i> Contatti</a></li>
         <li><a href="locations.html"><i class="fa fa-map fa-fw" aria-hidden="true"></i> Locations</a></li>
-        <li><a href="#"><i class="fa fa-share-alt fa-fw" aria-hidden="true"></i> Social</a></li>
+        <!--<li><a href="#"><i class="fa fa-share-alt fa-fw" aria-hidden="true"></i> Social</a></li>-->
         <li><a href="#"><i class="fa fa-plane fa-fw" aria-hidden="true"></i> Il viaggio</a></li>
     </ul>
 </div>
@@ -92,7 +92,7 @@
     </div>
 </nav>
 
-<div class="modal fade" id="gift-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div class="modal fade" id="gift-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -104,18 +104,21 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="contribute" class="control-label">Inserisci l'importo che vuoi regalare</label>
+                            <label for="contribute" class="control-label">Inserisci l'importo che vuoi regalare *</label>
                             <input type="text" class="form-control" id="contribute">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Nome di chi partecipa al regalo</label>
+                            <label for="recipient-name" class="control-label">Nome di chi partecipa al regalo *</label>
                             <input type="text" class="form-control" id="recipient-name">
                         </div>
                         <div class="form-group">
-                            <label for="message-text" class="control-label">Un messaggio per gli sposi:</label>
+                            <label for="message-text" class="control-label">Un messaggio per gli sposi</label>
                             <textarea class="form-control" id="message-text"></textarea>
                         </div>
                     </form>
+                    <p class="text-right">
+                        <small>* campi obbligatori</small>
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
@@ -159,7 +162,10 @@
                         <h4>{{totalPrice}} €</h4>
                     </div>
                     <div class="col-xs-6 text-right">
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#gift-modal" data-title="{{title}}">Regala</button>
+                        <button type="button" class="btn btn-success"
+                            data-toggle="modal" data-target="#gift-modal"
+                            data-title="{{title}}" data-total-price="{{totalPrice}}"
+                            data-consumed-price="{{consumedPrice}}">Regala</button>
                     </div>
                 </div>
             </div>
