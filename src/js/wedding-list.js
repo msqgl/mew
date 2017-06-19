@@ -90,6 +90,8 @@ $(function () {
     }, 5000);
 
     $("[type='number']").keypress(function (evt) {
-        evt.preventDefault();
+        if (evt.which < 48 || evt.which > 57) {
+            evt.preventDefault();
+        }
     });
 });
