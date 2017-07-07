@@ -3,3 +3,4 @@
 /node_modules
 /wedding-site.iml
 /src/css
+/src/js/*.min.js
