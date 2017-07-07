@@ -7,6 +7,10 @@ $(function () {
         $('#target').prepend(rendered);
     }
 
-    GSheetModule.getAllaRow(loadItemList);
+    function modalLoadingError() {
+        $("#modalError").modal();
+    }
+
+    RestModule.getAllGift(loadItemList, modalLoadingError);
 
 });

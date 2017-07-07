@@ -5,8 +5,21 @@ $(function () {
     var $messageText = $("#message-text");
     var $step1 = $(".step-1");
     var $step2 = $(".step-2");
+    var $stepError = $(".step-error");
     var $gift = $('#gift-modal');
     var $giftModalButton = $("#gift-modal-button");
+
+    function manageRestError() {
+        $step1.fadeOut(function () {
+            $stepError.fadeIn();
+        });
+    }
+
+    function manageRestSuccess() {
+        $step1.fadeOut(function () {
+            $step2.fadeIn();
+        });
+    }
 
     $gift.on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
@@ -81,11 +94,7 @@ $(function () {
                 sender: $sender.val(),
                 amount: $contribute.val()
             };
-            RestModule.saveGiftMsg(restData, function () {
-                $step1.fadeOut(function () {
-                    $step2.fadeIn();
-                });
-            });
+            RestModule.saveGiftMsg(restData, manageRestSuccess, manageRestError);
         }
     });
 
