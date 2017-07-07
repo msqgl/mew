@@ -35,23 +35,23 @@ module.exports = function (grunt) {
                     'src/js/blazy.min.js': 'src/js/blazy.js',
                     'src/js/mustache.min.js': 'src/js/mustache.js',
                     'src/js/wedding-list.min.js': 'src/js/wedding-list.js',
-                    // 'src/js/g-sheets.min.js': 'src/js/g-sheets.js'
+                    'src/js/rest.min.js': 'src/js/rest.js'
                 }
             }
         },
 
-/*
-        imagemin: {
-            dynamic: {
-                files: [{
-                    expand: true,
-                    cwd: 'src/img',
-                    src: ['**!/!*.{png,jpg,gif}'],
-                    dest: 'src/img/compress'
-                }]
-            }
-        },
-*/
+        /*
+         imagemin: {
+         dynamic: {
+         files: [{
+         expand: true,
+         cwd: 'src/img',
+         src: ['**!/!*.{png,jpg,gif}'],
+         dest: 'src/img/compress'
+         }]
+         }
+         },
+         */
 
         copy: {
             main: {
@@ -72,11 +72,21 @@ module.exports = function (grunt) {
                         dest: 'dist/font-awesome/fonts'
                     },
                     {expand: true, cwd: 'bower_components/gmaps/', src: ['gmaps.*'], dest: 'dist/gmaps'},
-                    {expand: true, cwd: 'bower_components/jquery.countdown/dist', src: ['**'], dest: 'dist/jquery.countdown'},
+                    {
+                        expand: true,
+                        cwd: 'bower_components/jquery.countdown/dist',
+                        src: ['**'],
+                        dest: 'dist/jquery.countdown'
+                    },
                     {expand: true, cwd: 'bower_components/scrollreveal/dist', src: ['**'], dest: 'dist/scrollreveal'},
                     {expand: true, cwd: 'bower_components/bLazy/', src: ['blazy.*.js'], dest: 'dist/bLazy'},
                     {expand: true, cwd: 'bower_components/slidebars/dist/', src: ['**'], dest: 'dist/slidebars'},
-                    {expand: true, cwd: 'bower_components/mustache.js/', src: ['mustache*.js'], dest: 'dist/mustache.js'},
+                    {
+                        expand: true,
+                        cwd: 'bower_components/mustache.js/',
+                        src: ['mustache*.js'],
+                        dest: 'dist/mustache.js'
+                    },
 
 
                     {expand: true, cwd: 'src/js', src: ['*.min.js'], dest: 'dist/custom/js'},

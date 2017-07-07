@@ -34,7 +34,7 @@
     <link href="custom/css/style.min.css" rel="stylesheet">
 </head>
 
-<body class="slidebars js-mustache wedding-list">
+<body class="slidebars js-mustache wedding-list rest">
 
 <div off-canvas="main-menu right push">
     <div>
@@ -150,22 +150,26 @@
     {{#items}}
     <div class="col-sm-4 card-container">
         <div class="card">
-            <div class="card-img-top" style="background: url({{image}}) no-repeat center center; background-size: cover;">
+            <div class="card-img-top" style="background: url({{<!--image-->}}) no-repeat center center; background-size: cover;">
             </div>
             <div class="card-block">
                 <h3>{{title}}</h3>
                 <p>{{description}}</p>
             </div>
             <div class="card-price container-fluid">
-                <div class="row">
+                <div class="row row-eq-height">
                     <div class="col-xs-6">
-                        <h4>{{totalPrice}} €</h4>
+                        <h4>Costo {{totalPrice}} €</h4>
+                        {{#consumedPrice}}
+                        <h4>Regalato {{consumedPrice}} €</h4>
+                        {{/consumedPrice}}
                     </div>
                     <div class="col-xs-6 text-right">
-                        <button type="button" class="btn btn-success"
+                        <button type="button" class="btn btn-success v-center"
                             data-toggle="modal" data-target="#gift-modal"
                             data-title="{{title}}" data-total-price="{{totalPrice}}"
-                            data-consumed-price="{{consumedPrice}}">Regala</button>
+                            data-consumed-price="{{consumedPrice}}"
+                            data-index="{{index}}">Regala</button>
                     </div>
                 </div>
             </div>

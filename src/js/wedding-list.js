@@ -5,6 +5,7 @@ $(function () {
     var $step1 = $(".step-1");
     var $step2 = $(".step-2");
     var $gift = $('#gift-modal');
+    var $giftModalButton = $("#gift-modal-button");
 
     $gift.on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
@@ -15,6 +16,7 @@ $(function () {
         var consumedPrice = button.data("consumed-price");
         var totalPrice = button.data("total-price");
         var delta = totalPrice - consumedPrice;
+        $contribute.attr("placeholder", "Massimo " + delta + " €");
         $contribute.attr("max", delta);
         $contribute.attr("min", 0);
 
@@ -25,6 +27,11 @@ $(function () {
         $contribute.val("");
         $recipient.removeClass("has-error");
         $recipient.val("");
+
+        var index = button.data("index");
+        $giftModalButton.data("index", index);
+        $giftModalButton.data("consumed-price", consumedPrice);
+        $giftModalButton.data("total-price", totalPrice);
     });
 
     $gift.on("hide.bs.modal", function () {
@@ -34,6 +41,7 @@ $(function () {
     });
 
     function validate(totalPrice, consumedPrice) {
+        console.log("totalPrice " + totalPrice + ", consumedPrice " + consumedPrice);
         var hasValidationError = false;
 
         var contributeVal = $contribute.val();
@@ -65,6 +73,14 @@ $(function () {
         var consumedPrice = $(this).data("consumed-price");
 
         if (!validate(totalPrice, consumedPrice)) {
+            console.log("contributeVal: " + contributeVal);
+            console.log("consumedPrice: " + consumedPrice);
+            var contributeVal = $contribute.val();
+            var newVal = contributeVal + consumedPrice;
+            var range = "F" + $(this).data("index");
+            var obj = "{values:[[" + newVal + "]]}";
+            GSheetModule.write(range, obj);
+
             $step1.fadeOut(function () {
                 $step2.fadeIn();
             });

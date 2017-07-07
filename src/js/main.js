@@ -29,5 +29,8 @@ $(function () {
     if (classes.includes("wedding-list")) {
         $.getScript(basePath + "wedding-list.min.js");
     }
+    if (classes.includes("rest")) {
+        $.getScript(basePath + "rest.min.js");
+    }
 
 });
