@@ -1,7 +1,8 @@
 $(function () {
 
     var $contribute = $("#contribute");
-    var $recipient = $("#recipient-name");
+    var $sender = $("#sender");
+    var $messageText = $("#message-text");
     var $step1 = $(".step-1");
     var $step2 = $(".step-2");
     var $gift = $('#gift-modal');
@@ -25,11 +26,11 @@ $(function () {
 
         $contribute.removeClass("has-error");
         $contribute.val("");
-        $recipient.removeClass("has-error");
-        $recipient.val("");
+        $sender.removeClass("has-error");
+        $sender.val("");
 
-        var index = button.data("index");
-        $giftModalButton.data("index", index);
+        var idGift = button.data("id-gift");
+        $giftModalButton.data("id-gift", idGift);
         $giftModalButton.data("consumed-price", consumedPrice);
         $giftModalButton.data("total-price", totalPrice);
     });
@@ -45,7 +46,7 @@ $(function () {
         var hasValidationError = false;
 
         var contributeVal = $contribute.val();
-        var recipientNameVal = $recipient.val();
+        var senderNameVal = $sender.val();
 
         if (!contributeVal) {
             hasValidationError = true;
@@ -59,9 +60,9 @@ $(function () {
             }
         }
 
-        if (!recipientNameVal) {
+        if (!senderNameVal) {
             hasValidationError = true;
-            $recipient.parent().addClass("has-error");
+            $sender.parent().addClass("has-error");
         }
 
         return hasValidationError;
@@ -73,16 +74,17 @@ $(function () {
         var consumedPrice = $(this).data("consumed-price");
 
         if (!validate(totalPrice, consumedPrice)) {
-            console.log("contributeVal: " + contributeVal);
-            console.log("consumedPrice: " + consumedPrice);
-            var contributeVal = $contribute.val();
-            var newVal = contributeVal + consumedPrice;
-            var range = "F" + $(this).data("index");
-            var obj = "{values:[[" + newVal + "]]}";
-            GSheetModule.write(range, obj);
 
-            $step1.fadeOut(function () {
-                $step2.fadeIn();
+            var restData = {
+                idGift: $(this).data("id-gift"),
+                msg: $messageText.val(),
+                sender: $sender.val(),
+                amount: $contribute.val()
+            };
+            RestModule.saveGiftMsg(restData, function () {
+                $step1.fadeOut(function () {
+                    $step2.fadeIn();
+                });
             });
         }
     });

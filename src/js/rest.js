@@ -3,6 +3,7 @@ var RestModule = function () {
     var baseUrl = "http://w3dd1ng.ddns.net";
     var port = "8080";
     var restGetAllGift = "/getAllGift";
+    var restSaveGiftMsg = "/saveGiftMsg";
 
     function getAllGift(successFn) {
         $.ajax({
@@ -18,7 +19,22 @@ var RestModule = function () {
         });
     }
 
+    function saveGiftMsg(restData, successFn) {
+        $.ajax({
+            method: "PUT",
+            url: baseUrl + ":" + port + restSaveGiftMsg,
+            success: function (data) {
+                if (!data.error) {
+                    successFn(data);
+                } else {
+                    //    TODO: manage error
+                }
+            }
+        });
+    }
+
     return {
-        getAllGift: getAllGift
+        getAllGift: getAllGift,
+        saveGiftMsg: saveGiftMsg
     }
 }();
