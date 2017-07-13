@@ -1,9 +1,9 @@
 var RestModule = function () {
 
-    var baseUrl = "http://w3dd1ng.ddns.net";
-    var port = "8080";
-    // var baseUrl = "http://localhost";
-    // var port = "1234";
+    // var baseUrl = "http://w3dd1ng.ddns.net";
+    // var port = "8080";
+    var baseUrl = "http://localhost";
+    var port = "1234";
     var restGetAllGift = "/getAllGift";
     var restSaveGiftMsg = "/saveGiftMsg";
 
