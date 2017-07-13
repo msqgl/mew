@@ -51,7 +51,6 @@
 
 <div canvas="container">
 
-<!--
         <div class="jumbotron bg-japan-lantern">
 
             <div class="container text-center v-center">
@@ -61,22 +60,25 @@
             </div>
 
         </div>
--->
 
     <div class="container margin-top-30" id="target"></div>
 
     <footer>
         <hr>
 
-        <div class="row">
-            <div class="col-xs-5 ">
-                © 2017
+        <div class="row row-eq-height">
+            <div class="col-xs-5">
+                <div class="v-center">
+                    © 2017
+                </div>
             </div>
             <div class="col-xs-2 text-center">
-                <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-pied-piper fa-2x v-center" aria-hidden="true"></i>
             </div>
             <div class="col-xs-5 text-right">
-                Michele Squeglia
+                <div class="v-center">
+                    Michele Squeglia
+                </div>
             </div>
 
         </div>
@@ -93,6 +95,26 @@
         </div>
     </div>
 </nav>
+
+<div class="modal fade" id="gift-error" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Uffa!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Contatta lo sposo che è colpa sua :).</p>
+                <p>Scrivi una mail a squeglia.michele@gmail.com.</p>
+                <p>Grazie!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="modal fade" id="gift-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -151,26 +173,6 @@
     </div>
 </div>
 
-<div class="modal fade" id="gift-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Uffa!</h4>
-            </div>
-            <div class="modal-body">
-                <p>Contatta lo sposo che è colpa sua :).</p>
-                <p>Scrivi una mail a squeglia.michele@gmail.com.</p>
-                <p>Grazie!</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="jquery.countdown/jquery.countdown.min.js"></script>
@@ -209,7 +211,8 @@
                 </div>
             </div>
         </div>
-        <hr class="cards-divider">
+        {{^last}}<hr class="cards-divider">{{/last}}
+
     </div>
     {{/data}}
 </div>
