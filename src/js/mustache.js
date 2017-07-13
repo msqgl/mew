@@ -12,7 +12,8 @@ $(function () {
             console.log("totalPrice " + totalPrice + ", consumedPrice " + consumedPrice);
             if (totalPrice <= consumedPrice) {
                 var greenCheck = $(this).find(".green-check");
-                $(greenCheck).removeClass("hidden")
+                $(greenCheck).removeClass("hidden");
+                $(button).hide();
             }
         });
     }

@@ -37,10 +37,10 @@ $(function () {
         $step1.fadeIn();
         $step2.fadeOut();
 
-        $contribute.removeClass("has-error");
         $contribute.val("");
-        $sender.removeClass("has-error");
         $sender.val("");
+        $contribute.parent().removeClass("has-error");
+        $sender.parent().removeClass("has-error");
 
         var idGift = button.data("id-gift");
         $giftModalButton.data("id-gift", idGift);
@@ -62,6 +62,7 @@ $(function () {
         var senderNameVal = $sender.val();
 
         if (!contributeVal) {
+            console.log("Validation error 1");
             hasValidationError = true;
             $contribute.parent().addClass("has-error");
         }
@@ -69,11 +70,14 @@ $(function () {
         if (contributeVal) {
             var delta = totalPrice - consumedPrice;
             if (contributeVal > delta) {
+                console.log("Validation error 2");
+                hasValidationError = true;
                 $contribute.parent().addClass("has-error");
             }
         }
 
         if (!senderNameVal) {
+            console.log("Validation error 3");
             hasValidationError = true;
             $sender.parent().addClass("has-error");
         }
@@ -82,9 +86,12 @@ $(function () {
     }
 
 
-    $("#gift-modal-button").on("click tap", function () {
+    $giftModalButton.on("click tap", function () {
         var totalPrice = $(this).data("total-price");
         var consumedPrice = $(this).data("consumed-price");
+
+        $contribute.parent().removeClass("has-error");
+        $sender.parent().removeClass("has-error");
 
         if (!validate(totalPrice, consumedPrice)) {
 
