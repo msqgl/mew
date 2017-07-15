@@ -12,6 +12,11 @@ body {
   text-align: center;
 }
 
+.nounderline a:focus, a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
 .navbar {
   opacity: 0.9;
   background-color: @color-pale-turquoise;
@@ -288,10 +293,10 @@ img#logo-menu {
 }
 
 .row-eq-height {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .no-md-margin {
@@ -538,4 +543,8 @@ fieldset[disabled] .btn-twitter.active {
   font-size: 12px;
   line-height: 1.42;
   border-radius: 20px;
+}
+
+.width-full {
+  width: 100%;
 }
