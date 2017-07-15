@@ -87,6 +87,8 @@ $(function () {
 
 
     $giftModalButton.on("click tap", function () {
+        $(this).attr("disabled", "disabled");
+
         var totalPrice = $(this).data("total-price");
         var consumedPrice = $(this).data("consumed-price");
 
@@ -102,6 +104,8 @@ $(function () {
                 amount: $contribute.val()
             };
             RestModule.saveGiftMsg(restData, manageRestSuccess, manageRestError);
+        } else {
+            $(this).removeAttr("disabled");
         }
     });
 
