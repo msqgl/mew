@@ -4,7 +4,7 @@ $(function () {
     var $jsCountdown = $("#js-countdown");
     var $H2 = $jsCountdown.find("h2");
 
-    var weddingDateTime = "2017/07/24 17:22:00";
+    var weddingDateTime = "2017/09/22 15:30:00";
 
     var updateCountdown = function (event) {
         $countdownSelector.text(
