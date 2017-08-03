@@ -26,9 +26,6 @@ $(function () {
     if (classes.includes("js-lazy")) {
         $.getScript(basePath + "blazy.min.js");
     }
-    if (classes.includes("js-mustache")) {
-        $.getScript(basePath + "mustache.min.js");
-    }
     if (classes.includes("wedding-list")) {
         $.getScript(basePath + "wedding-list.min.js");
     }

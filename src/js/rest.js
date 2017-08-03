@@ -66,4 +66,7 @@ var RestModule = function () {
 
     getAllGift(loadItemList, modalLoadingError);
 
+    return {
+        saveGiftMsg: saveGiftMsg
+    }
 }();
