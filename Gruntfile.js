@@ -33,25 +33,22 @@ module.exports = function (grunt) {
                     'src/js/scroll.min.js': 'src/js/scroll.js',
                     'src/js/slidebars.min.js': 'src/js/slidebars.js',
                     'src/js/blazy.min.js': 'src/js/blazy.js',
-                    'src/js/mustache.min.js': 'src/js/mustache.js',
                     'src/js/wedding-list.min.js': 'src/js/wedding-list.js',
                     'src/js/rest.min.js': 'src/js/rest.js'
                 }
             }
         },
 
-        /*
          imagemin: {
          dynamic: {
          files: [{
          expand: true,
          cwd: 'src/img',
-         src: ['**!/!*.{png,jpg,gif}'],
+         src: ['**/*.{png,jpg,gif}'],
          dest: 'src/img/compress'
          }]
          }
          },
-         */
 
         copy: {
             main: {
@@ -108,5 +105,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
 
     // grunt.registerTask('default', ['clean', 'less', 'uglify', 'imagemin', 'copy']);
-    grunt.registerTask('default', ['clean', 'less', 'uglify', 'copy']);
+    grunt.registerTask('default', ['clean', 'less', 'uglify','imagemin', 'copy']);
 };
