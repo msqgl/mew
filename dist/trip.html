@@ -198,10 +198,12 @@
             <div class="card-price container-fluid">
                 <div class="row row-eq-height row-vertical-align">
                     <div class="col-xs-8">
-                        <h4>Costo {{totalPrice}} €</h4>
-                        {{#consumedPrice}}
-                        <h4>Regalato {{consumedPrice}} €</h4>
-                        {{/consumedPrice}}
+                        {{#totalPrice}}
+                            <h4>Costo {{totalPrice}} €</h4>
+                            {{#consumedPrice}}
+                            <h4>Regalato {{consumedPrice}} €</h4>
+                            {{/consumedPrice}}
+                        {{/totalPrice}}
                     </div>
                     <div class="col-xs-4 text-right">
                         <button type="button" class="btn btn-success"

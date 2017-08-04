@@ -52,7 +52,7 @@ var RestModule = function () {
             var button = $(this).find("button");
             var totalPrice = $(button).data("total-price");
             var consumedPrice = $(button).data("consumed-price");
-            if (totalPrice <= consumedPrice) {
+            if (totalPrice && totalPrice <= consumedPrice) {
                 var greenCheck = $(this).find(".green-check");
                 $(greenCheck).removeClass("hidden");
                 $(button).hide();
