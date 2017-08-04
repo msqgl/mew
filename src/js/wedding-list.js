@@ -48,6 +48,7 @@ $(function () {
 
         $step1.fadeIn();
         $step2.fadeOut();
+        $stepError.fadeOut();
 
         $contribute.val("");
         $sender.val("");
