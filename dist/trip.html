@@ -208,9 +208,10 @@
                     <div class="col-xs-4 text-right">
                         <button type="button" class="btn btn-success"
                             data-toggle="modal" data-target="#gift-modal"
-                            data-title="{{title}}" data-total-price="{{totalPrice}}"
-                            data-consumed-price="{{consumedPrice}}"
-                            data-id-gift="{{idGift}}">Regala</button>
+                            data-title="{{title}}" data-id-gift="{{idGift}}"
+                            {{#totalPrice}}
+                                data-total-price="{{totalPrice}}" data-consumed-price="{{consumedPrice}}"
+                            {{/totalPrice}}>Regala</button>
                     </div>
                 </div>
             </div>

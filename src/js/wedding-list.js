@@ -27,12 +27,24 @@ $(function () {
         var modal = $(this);
         modal.find('.modal-title').text(title);
 
-        var consumedPrice = button.data("consumed-price");
         var totalPrice = button.data("total-price");
-        var delta = totalPrice - consumedPrice;
-        $contribute.attr("placeholder", "Massimo " + delta + " €");
-        $contribute.attr("max", delta);
         $contribute.attr("min", 0);
+
+        if (totalPrice) {
+            var consumedPrice = button.data("consumed-price");
+            var delta = totalPrice - consumedPrice;
+            $contribute.attr("placeholder", "Massimo " + delta + " €");
+            $contribute.attr("max", delta);
+
+            $giftModalButton.data("consumed-price", consumedPrice);
+            $giftModalButton.data("total-price", totalPrice);
+        } else {
+            $contribute.removeAttr("placeholder");
+            $contribute.removeAttr("max");
+
+            $giftModalButton.removeData("consumed-price", null);
+            $giftModalButton.removeData("total-price", "");
+        }
 
         $step1.fadeIn();
         $step2.fadeOut();
@@ -44,8 +56,6 @@ $(function () {
 
         var idGift = button.data("id-gift");
         $giftModalButton.data("id-gift", idGift);
-        $giftModalButton.data("consumed-price", consumedPrice);
-        $giftModalButton.data("total-price", totalPrice);
     });
 
     $gift.on("hide.bs.modal", function () {
@@ -67,7 +77,7 @@ $(function () {
             $contribute.parent().addClass("has-error");
         }
 
-        if (contributeVal) {
+        if (contributeVal && totalPrice) {
             var delta = totalPrice - consumedPrice;
             if (contributeVal > delta) {
                 console.log("Validation error 2");
