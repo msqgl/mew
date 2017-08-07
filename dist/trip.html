@@ -198,15 +198,15 @@
             </div>
             <div class="card-price container-fluid">
                 <div class="row row-eq-height row-vertical-align">
-                    <div class="col-xs-7">
+                    <div class="col-xs-8">
                         {{#totalPrice}}
-                            <h4>Costo {{totalPrice}} €</h4>
+                            <h4><small>Costo</small> {{totalPrice}} €</h4>
                             {{#consumedPrice}}
-                            <h4>Regalato {{consumedPrice}} €</h4>
+                            <h4><small>Regalato</small> {{consumedPrice}} €</h4>
                             {{/consumedPrice}}
                         {{/totalPrice}}
                     </div>
-                    <div class="col-xs-5 text-right">
+                    <div class="col-xs-4 text-right">
                         <button type="button" class="btn btn-success"
                             data-toggle="modal" data-target="#gift-modal"
                             data-title="{{title}}" data-id-gift="{{idGift}}"
