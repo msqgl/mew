@@ -200,9 +200,11 @@
                 <div class="row row-eq-height row-vertical-align">
                     <div class="col-xs-8">
                         {{#totalPrice}}
-                            <h4><small>Costo</small> {{totalPrice}} €</h4>
+                            <small>Costo</small>
+                            <h4 class="no-margin-top">{{totalPrice}} €</h4>
                             {{#consumedPrice}}
-                            <h4><small>Regalato</small> {{consumedPrice}} €</h4>
+                            <small>Regalato</small>
+                            <h4 class="no-margin-top">{{consumedPrice}} €</h4>
                             {{/consumedPrice}}
                         {{/totalPrice}}
                     </div>
