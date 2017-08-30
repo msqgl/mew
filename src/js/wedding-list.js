@@ -21,6 +21,11 @@ $(function () {
         });
     }
 
+    function initIban() {
+        var iban = $("body").data("iban");
+        $(".iban-placeholder").text(iban);
+    }
+
     $gift.on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
         var title = button.data('title');
@@ -143,4 +148,6 @@ $(function () {
             evt.preventDefault();
         }
     });
+
+    initIban();
 });

@@ -39,7 +39,8 @@
     <link href="custom/css/style.min.css" rel="stylesheet">
 </head>
 
-<body class="slidebars js-mustache wedding-list rest">
+<body class="slidebars js-mustache wedding-list rest"
+      data-iban="IT42U 02008 32974 001135510994">
 
 <div off-canvas="main-menu right push">
     <div>
@@ -119,6 +120,42 @@
     </div>
 </div>
 
+<div class="modal fade" id="gift-payment" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-center">Dati per il bonifico</h4>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Grazie del regalo</h3>
+                <p>Effettua un bonifico per l'importo indicato con i seguenti dati:</p>
+                <ul>
+                    <li>
+                        IBAN
+                        <ul>
+                            <li><strong class="iban-placeholder"></strong></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Intestatario
+                        <ul>
+                            <li><strong>Michele Squeglia</strong></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Causale
+                        <ul>
+                            <li><strong>Regalo di nozze</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="gift-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -161,7 +198,7 @@
                         <li>
                             IBAN
                             <ul>
-                                <li><strong>IT 00 X 12345 67890 000000000000</strong></li>
+                                <li><strong class="iban-placeholder"></strong></li>
                             </ul>
                         </li>
                         <li>
@@ -241,11 +278,31 @@
                 </div>
             </div>
         </div>
-        {{^last}}<hr class="cards-divider">{{/last}}
-
+        <hr class="cards-divider">
     </div>
     {{/data}}
+    <div class="col-sm-6 col-lg-4 card-container">
+        <div class="card">
+        <img src="custom/img/utils/green-check.png" class="green-check hidden">
+            <div class="card-img-top" style="background: url(custom/img/lista/payment.jpg) no-repeat center center; background-size: cover;">
+            </div>
+            <div class="card-block text-justify">
+                <h3>Hai dimenticato i dati per il regalo?</h3>
+                <p>Se hai già scelto il pacchetto, ma hai dimenticato o perso i dati per fare il bonifico, puoi recuperare facilmente le informazioni che ti servono.</p>
+            </div>
+            <div class="card-price container-fluid">
+                <div class="row row-eq-height row-vertical-align">
+                    <div class="col-xs-8">
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#gift-payment">Info</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 
 
