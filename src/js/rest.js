@@ -1,6 +1,6 @@
 var RestModule = function () {
 
-    var baseUrl = "http://miky-ele.ddns.net";
+    var baseUrl = window.location.hostname;
     var port = "8080";
     // var baseUrl = "http://localhost";
     // var port = "1234";
